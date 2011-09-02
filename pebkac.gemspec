@@ -6,8 +6,13 @@ Gem::Specification.new do |s|
   s.summary     = %q{Raise exceptions with i18n messages}
   s.license     = 'MIT'
 
+  s.homepage    = 'http://github.com/khalsah/pebkac'
+
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ['lib']
+
+  s.has_rdoc         = true
+  s.extra_rdoc_files = ['README.rdoc']
 
   s.add_runtime_dependency 'i18n', '~> 0.6.0'
 end

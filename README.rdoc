@@ -2,12 +2,33 @@
 
 Raise exceptions with i18n messages
 
-== Example Usage
+== Usage
 
-  require 'pebkac'
-  class MyError < StandardError; end
-  pebkac MyError
-  pebkac MyError, :other_message
+1. Remember to setup your I18n load path!
+
+2. Require the gem:
+
+   <tt>require 'pebkac'</tt>
+
+3. Create your error classes as usual:
+
+   <tt>class MyError < StandardError; end</tt>
+
+4. Call Kernel#pebkac in place of Kernel#raise:
+
+   <tt>pebkac MyError</tt>
+
+   which is equivalent to
+
+   <tt>raise MyError, I18n.t(:my_error, :scope => :pebkac)</tt>
+
+5. Or do something more fancy
+
+   <tt>pebkac MyError, :the_msg_key, {:scope => :errors, :thing => 'Stuff'}, caller(3)</tt>
+
+   which turns into something like
+
+   <tt>raise MyError, I18n.t(:the_msg_key, :scope => :errors, :thing => 'Stuff'), caller(3)</tt>
 
 == License
 
