@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'pebkac'
-  s.version     = '0.0.1'
+  s.version     = '0.0.2'
   s.authors     = ['Hargobind S. Khalsa']
   s.email       = ['khalsah@gmail.com']
   s.summary     = %q{Raise exceptions with i18n messages}
